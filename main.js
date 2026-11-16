@@ -13973,9 +13973,6 @@ Error generating stack: ` + i.message + `
   // src/App.tsx
   var import_react = __toESM(require_react());
 
-  // src/photos/hero.jpg
-  var hero_default = "./assets/MKENVYZQ.jpg";
-
   // src/photos/infra.jpg
   var infra_default = "./assets/IOWJLGIR.jpg";
 
@@ -13996,7 +13993,7 @@ Error generating stack: ` + i.message + `
     globe: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", { cx: "12", cy: "12", r: "10" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M2 12h20" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" })
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" })
     ] }),
     cloud: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" }),
     shield: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }),
@@ -14010,23 +14007,25 @@ Error generating stack: ` + i.message + `
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "#fff", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true, children: icons[name] });
   }
   var services = [
-    { icon: "bolt", name: "Managed IT", hue: "#22b8cf", detail: "Your whole environment monitored, patched and maintained around the clock. One monthly plan covers it all - no surprise invoices, no chasing three vendors for one problem.", includes: ["24/7 monitoring and alerting", "Patching and device management", "Vendor and license management"] },
-    { icon: "headset", name: "Help Desk", hue: "#4dabf7", detail: "Fast, human support for your team. Real answers when something breaks, from people who already know your setup - not a script reader starting from zero.", includes: ["Remote support in minutes", "On-site visits when hands are needed", "New-hire setup and offboarding"] },
-    { icon: "globe", name: "Networks", hue: "#748ffc", detail: "Design, cabling, Wi-Fi, firewalls and switching. Networks built clean the first time and documented, so the next fix takes minutes instead of a weekend of tracing cables.", includes: ["Network design and cabling", "Wi-Fi surveys and coverage", "Firewalls and secure remote access"] },
-    { icon: "cloud", name: "Cloud", hue: "#15aabf", detail: "Migrations, Microsoft 365, Google Workspace and cloud infrastructure that actually fits how you work. Move at your pace - no big-bang cutovers that stop the business for a day.", includes: ["Email and file migrations", "Microsoft 365 and Google Workspace admin", "Cloud servers and storage"] },
-    { icon: "shield", name: "Cybersecurity", hue: "#9775fa", detail: "Layered protection across endpoints, email, access and people. We find the gaps before someone else does - and make sure one bad click cannot take down the company.", includes: ["Endpoint and email protection", "MFA and access control", "Staff security training"] },
-    { icon: "database", name: "Backup & Recovery", hue: "#20c997", detail: "Automated, tested backups with a real recovery plan behind them. When disaster hits - hardware, ransomware, human error - you are back in hours, not weeks.", includes: ["Automated cloud and local backups", "Regular recovery testing", "Ransomware rollback"] }
+    { icon: "bolt", name: "Managed IT", sub: "Your whole stack, watched 24/7.", hue: "#22b8cf", includes: ["24/7 monitoring and alerting", "Patching and device management", "Vendor and license management"] },
+    { icon: "headset", name: "Help Desk", sub: "Real answers, in minutes.", hue: "#4dabf7", includes: ["Remote support in minutes", "On-site visits when hands are needed", "New-hire setup and offboarding"] },
+    { icon: "globe", name: "Networks", sub: "Built clean. Documented.", hue: "#748ffc", includes: ["Network design and cabling", "Wi-Fi surveys and coverage", "Firewalls and secure remote access"] },
+    { icon: "cloud", name: "Cloud", sub: "Migrations without the downtime.", hue: "#15aabf", includes: ["Email and file migrations", "Microsoft 365 and Google Workspace admin", "Cloud servers and storage"] },
+    { icon: "shield", name: "Cybersecurity", sub: "Layered. Tested. Hardened.", hue: "#9775fa", includes: ["Endpoint and email protection", "MFA and access control", "Staff security training"] },
+    { icon: "database", name: "Backup & Recovery", sub: "Back in hours, not weeks.", hue: "#20c997", includes: ["Automated cloud and local backups", "Regular recovery testing", "Ransomware rollback"] }
   ];
+  var rhythm = ["Networks.", "Cloud.", "Security.", "Support."];
   var points = [
-    { title: "One partner for everything", detail: "From the first cable to the last migration, one team owns the whole stack. No vendor finger-pointing." },
-    { title: "Security built in", detail: "Every system we ship is hardened from day one, not patched up after something goes wrong." },
-    { title: "Predictable pricing", detail: "Flat monthly plans sized to your business. You always know what IT costs before the month starts." }
+    { title: "One partner for everything", detail: "First cable to last migration. One team owns the whole stack." },
+    { title: "Security built in", detail: "Hardened from day one, not patched after something breaks." },
+    { title: "Predictable pricing", detail: "Flat monthly plans. You know the cost before the month starts." }
   ];
   var steps = [
-    { title: "Assess", detail: "We audit your current setup - hardware, network, accounts, security gaps - and hand you a plain-English report with clear priorities and one flat price." },
-    { title: "Build", detail: "We fix what is broken, standardize the stack, and document everything. Nothing lives in one person's head - including ours." },
-    { title: "Manage & Support", detail: "We monitor, patch, back up and answer the phone. Your team gets support from people who know your systems by name." }
+    { title: "Assess", detail: "We audit everything. You get a plain-English plan and one flat price." },
+    { title: "Build", detail: "We fix what is broken, standardize the stack, document it all." },
+    { title: "Manage & Support", detail: "We monitor, patch, back up and answer the phone." }
   ];
+  var stack = ["Microsoft 365", "Google Workspace", "Azure", "AWS", "Cloudflare", "Cisco", "Ubiquiti", "Dell", "HP", "Lenovo", "Synology", "MikroTik", "Fortinet", "Veeam", "Huntress", "Duo"];
   var industries = [
     { name: "Small Business", detail: "A full IT department, without the headcount." },
     { name: "Property Management", detail: "Office, on-site and smart-building systems kept online." },
@@ -14135,15 +14134,16 @@ Error generating stack: ` + i.message + `
     ] });
   }
   function Hero() {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { className: "et-hero", style: { backgroundImage: `url(${hero_default})` }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-hero-grid", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { className: "et-hero", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-hero-grid", children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-hero-inner", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { className: "et-hero-logo", src: logo_lockup_default, alt: "Exclusive Tech - Exclusive solutions. Reliable tech." }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-eyebrow", children: "~/managed-service-provider" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", { className: "et-hero-title", children: [
-          "We build ",
+          "We build",
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "et-grad", children: "everything." })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-hero-sub", children: "Networks, cloud, security, support - your entire IT stack, designed, built and run by one team. You run the business. We keep the lights on." }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-hero-sub", children: "Networks, cloud, security, support - your entire IT stack, designed, built and run by one team." }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-hero-cta", children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { className: "et-btn et-btn-primary", href: "#contact", onClick: goTo("contact"), children: "Talk to us" }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { className: "et-btn et-btn-ghost", href: "#services", onClick: goTo("services"), children: "See what we do" })
@@ -14152,14 +14152,26 @@ Error generating stack: ` + i.message + `
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Terminal, {})
     ] }) });
   }
+  function Rhythm() {
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "et-rhythm", "aria-label": "What we build", children: [
+      rhythm.map((word, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { className: "et-rhythm-line et-reveal", style: { transitionDelay: `${i * 60}ms` }, tabIndex: 0, children: [
+        "We build ",
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "et-rhythm-word", children: word })
+      ] }, word)),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-rhythm-tag et-reveal", style: { transitionDelay: "260ms" }, children: "Built for you. Run by us." })
+    ] });
+  }
   function Services() {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "services", className: "et-section", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "// what we do" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "WHAT WE DO" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "et-h2 et-reveal", children: "Six ways we carry your IT" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "et-grid", children: services.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-card et-reveal", style: { transitionDelay: `${i % 3 * 70}ms` }, tabIndex: 0, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "et-chip", style: { background: `linear-gradient(135deg, ${s.hue}, ${s.hue}88)` }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: s.icon }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-card-top", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "et-num", children: String(i + 1).padStart(2, "0") }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "et-chip", style: { background: `linear-gradient(135deg, ${s.hue}, ${s.hue}88)` }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: s.icon }) })
+        ] }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { className: "et-card-name", children: s.name }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-card-detail", children: s.detail }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-card-sub", children: s.sub }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", { className: "et-includes", children: s.includes.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: item }, item)) })
       ] }, s.name)) })
     ] });
@@ -14172,8 +14184,8 @@ Error generating stack: ` + i.message + `
   }
   function Process() {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "process", className: "et-section", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "// how it works" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "et-h2 et-reveal", children: "Three steps to IT that runs itself" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "HOW IT WORKS" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "et-h2 et-reveal", children: "Three steps. You own the result." }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "et-steps", children: steps.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-step et-reveal", style: { transitionDelay: `${i * 90}ms` }, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "et-step-num", children: String(i + 1).padStart(2, "0") }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { className: "et-step-title", children: s.title }),
@@ -14181,9 +14193,16 @@ Error generating stack: ` + i.message + `
       ] }, s.title)) })
     ] });
   }
+  function Stack() {
+    const row = [...stack, ...stack];
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "et-stack", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "WORKS WITH WHAT YOU ALREADY RUN" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "et-marquee", "aria-label": stack.join(", "), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "et-marquee-track", "aria-hidden": true, children: row.map((name, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "et-marquee-item", children: name }, i)) }) })
+    ] });
+  }
   function Industries() {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "et-section", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "// industries we serve" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "WHO WE SERVE" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "et-h2 et-reveal", children: "Built for businesses like yours" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "et-industries", children: industries.map((ind, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-industry et-reveal", style: { transitionDelay: `${i % 3 * 70}ms` }, tabIndex: 0, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { className: "et-industry-name", children: ind.name }),
@@ -14194,7 +14213,7 @@ Error generating stack: ` + i.message + `
   function About() {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { id: "about", className: "et-about", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-about-inner", children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-about-text", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-kicker-dark et-reveal", children: "// about" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "ABOUT" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "et-h2 et-reveal", children: "One team. Every layer." }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-key et-reveal", children: '"I build everything." That is the whole idea.' }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-p et-reveal", children: "Exclusive Tech is a managed service provider: we design, build and run the technology your business depends on, from the wiring in the walls to the cloud your files live in. The same hands that plan your network are the ones who answer when you call." }),
@@ -14209,7 +14228,7 @@ Error generating stack: ` + i.message + `
   function Faq() {
     const [open, setOpen] = (0, import_react.useState)(0);
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "faq", className: "et-section", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "// questions" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "QUESTIONS" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "et-h2 et-reveal", children: "Asked before every first call" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "et-faq", children: faqs.map((f, i) => {
         const isOpen = open === i;
@@ -14225,7 +14244,7 @@ Error generating stack: ` + i.message + `
   }
   function Contact() {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "contact", className: "et-cta", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-kicker-dark et-reveal", children: "// contact" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-kicker et-reveal", children: "CONTACT" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "et-cta-title et-reveal", children: "Ready when you are." }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "et-cta-sub et-reveal", children: "Tell us what is slowing you down and we will map the fix. First conversation is free, and there is no obligation past it." }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-hero-cta et-reveal", children: [
@@ -14248,11 +14267,13 @@ Error generating stack: ` + i.message + `
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { ref: rootRef, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FileCard, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "et-top", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrandBar, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {})
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rhythm, {})
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Services, {}),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Why, {}),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Process, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stack, {}),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Industries, {}),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {}),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Faq, {}),
